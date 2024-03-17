@@ -1,0 +1,43 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    background: blueviolet;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+    height: min-content;
+    min-height: 1oovh;
+}
+.card{
+    background: blue;
+    border: 5px solid red;
+    padding: 20px;
+}
+.card h1{
+    margin-bottom: 10px;
+}
+.grid{
+    border: 5px solid red;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+}
+
+#button{
+    background: #70a0af;
+    height: 25px;
+    width: 25px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="css/blog.css">
+    <script src="https://kit.fontawesome.com/b31bc96ce0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h2 class="logo">Portfolio.</h2>
+                <ul id="sidemenu">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/index.html">About</a></li>
+                <!--  <li><a href="dashboard/dashboard.html">Dashboard</a></li> -->
+                    <li><a href="/index.html">Blogs</a></li>
+                    <li><a href="/index.html">Projects</a></li>
+                    <li><a href="/index.html">Contact</a></li>
+                    <li><a href="login/login.html">Login</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+        </div>
+    </div>
+    <div class="banner"></div>
+    <div class="blog">
+        <h1 class="title"></h1>
+        <p class="published"><span>published at -</span></p>
+        <div class="article">
+        </div>
+    </div>
+    <h1 class="sub-heading">Read more</h1>
+    <script>
+        var sidemeu = document.getElementById("sidemenu");
+        function openmenu() {sidemeu.style.right = '0';}
+        function closemenu() {sidemeu.style.right = '-200px';}
+    </script>
+    <script src="js/blog.js"></script>
+</body>
+</html>
