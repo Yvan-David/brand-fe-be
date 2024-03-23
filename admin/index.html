@@ -182,23 +182,6 @@
 
 <script src="admin.js"></script>
 <script>
-    function logout(){
-
-        let logged = (sessionStorage.getItem("logged")) || {};
-        let logged_users = JSON.parse(localStorage.getItem("logged_users")) || [];
-
-        // Used Array.findIndex to find the index of the user with the matching email
-        const userIndex = logged_users.findIndex((logged_user) => logged_user.email === logged);
-       
-        // if the user found remove them from the array
-        if(userIndex !== -1){
-            logged_users.splice(userIndex,1)
-
-            //update the local storage
-            localStorage.setItem('logged_users', JSON.stringify(logged_users))
-        }
-        sessionStorage.removeItem('logged');
-    }
 </script>
 <!-- <script>
     function dash(){

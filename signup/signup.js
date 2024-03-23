@@ -39,7 +39,7 @@ form.addEventListener('submit', (e) => {
 /* ----- Function to save input data via API ----- */
 async function saveData(username, email, password) {
     try {
-        const response = await fetch('http://localhost:8080/signup', {
+        const response = await fetch('https://backend-brand-production.up.railway.app/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

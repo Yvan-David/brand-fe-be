@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Post</title>
     <link rel="stylesheet" href="css/blog1.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.11/css/boxicons.min.css">
-
+    <script src="https://kit.fontawesome.com/b31bc96ce0.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="header">
@@ -29,15 +28,15 @@
         </div>
     </div>
     <section class="post-header">
-        <div class="header-content post-container">
-            <a href="home.html" class="back-home"> Back To Home</a>
-            <h1 class="header-title">How to create Best UX Design with Adobe</h1>
+        <div class="header-content post-container banner">
+            <a href="/blogs/allBlogs.html" class="back-home"> All Blogs</a>
+            <h1 class="header-title title">How to create Best UX Design with Adobe</h1>
             <img src="/images/img2.jpg" alt="" class="header-img">
         </div>
     </section>
 
-    <section class="post-content post-container">
-        <h2 class="sub-reading"> Create Best UX Design</h2>
+    <section class="post-content post-container article">
+        <h2 class="sub-reading published"> Create Best UX Design</h2>
         <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quasi a dolores libero autem, alias adipisci consectetur perspiciatis, delectus dolorum repellendus temporibus. Cumque sint voluptatibus eligendi illum dolore deleniti eos?</p>
         <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur dolores quam fugit delectus accusamus id sapiente facilis ipsum, ullam, earum quis molestias accusantium vel deleniti. Quidem veniam dolor modi?</p>
         <h2 class="sub-reading"> Create Best UX Design</h2>
@@ -46,14 +45,43 @@
         <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur dolores quam fugit delectus accusamus id sapiente facilis ipsum, ullam, earum quis molestias accusantium vel deleniti. Quidem veniam dolor modi?</p>
         
     </section>
-    <section class="comment-container">
-        <div class="comment-box">
-            <p>Leave a Comment</p>
-            <form class="comment-form">
-                <textarea rows="10" placeholder="write Your Comment"></textarea>
-                <button type="submit">Post Comment</button>
-            </form>
+    <div class="like-section">
+        <button class="like-btn" onclick="likeBlog()"><i class="fas fa-heart"></i></button>
+        <div class="like-count">0 Likes</div> 
+    </div>
+    <section>
+        <div class="container1">
+            <div class="comments"></div>
+            <div class="head"><h1>Post a Comment</h1></div>
+            <div class="comments"></div>
+            <div class="commentbox">
+                    <div class="commentinput">
+                        <input type="text" placeholder="Enter comment" class="usercomment">
+                        <div id="error"></div>
+                        <div class="buttons">
+                            <button type="submit" onclick="addComment()" id="publish">Publish</button>
+                            </div>
+                        </div>
+            </div>
         </div>
     </section>
 </body>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links")
+    var tabcontents = document.getElementsByClassName("tab-contents")
+
+    function opentab(tabname){
+        for(tablink of tablinks) tablink.classList.remove("active-link")
+        for(tabcontent of tabcontents) tabcontent.classList.remove("active-tab")
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu() {sidemeu.style.right = '0';}
+    function closemenu() {sidemeu.style.right = '-200px';}
+</script>
+<script src="js/published.js"></script>
+<script src="js/comment.js"></script>
 </html>

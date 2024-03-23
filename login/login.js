@@ -37,25 +37,60 @@ form.addEventListener('submit', async (e) => {
 /* ----- Function to log in user via API ----- */
 async function loginUser(email, password) {
     try {
-        const response = await fetch('http://localhost:8080/login', {
+        const response = await fetch('https://backend-brand-production.up.railway.app/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ email, password })
-        });
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to login');
+            }
+            response.cookies
+            return response.json();
+        })
+        .then(data => {
 
-        if (response.ok) {
-            if (email === 'yvan@gmail.com') {
+            window.location.href = "dashboard.html";
+            var role = data.user.userRole;
+            var token= data.token;
+            var email= data.user.email;
+            var userId= data.user._id;
+            var name = data.user.username;
+            localStorage.setItem('token',token)
+
+            if (email === 'dave@gmail.com') {
+                localStorage.setItem('adminIsLoggedIn', true);
+                localStorage.setItem('currentUserEmail', email);
+                localStorage.setItem('currentUsername', name);
+                localStorage.setItem('userId', userId);
                 window.location.href = "/admin/index.html";
             } else {
+                localStorage.setItem('userIsLoggedIn', true);
+                localStorage.setItem('currentUserEmail', email);
+                localStorage.setItem('currentUsername', name);
+                localStorage.setItem('userId', userId);
                 window.location.href = "/users/index.html";
+                
             }
-            console.log(response.json())
-        } else {
-            throw new Error('Failed to log in user');
-        }
+        })
+        
     } catch (error) {
         throw error;
-    }
+    };
+/*     document.addEventListener('DOMContentLoaded', function () {
+
+    }) */
+    window.onload = function() {
+        var userIsLoggedIn = localStorage.getItem('userIsLoggedIn');
+        var adminIsLoggedIn = localStorage.getItem('adminIsLoggedIn');
+
+        if (userIsLoggedIn) {
+            window.location.href = "/users/index.html";
+        } else if (adminIsLoggedIn) {
+            window.location.href = "/admin/index.html";
+        }
 }
+};

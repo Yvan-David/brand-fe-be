@@ -55,7 +55,7 @@ nav ul li a:hover::after{
 .post-header {
     width: 100%;
     height: 500px;
-    background: wheat;
+    background: #1a1a1a;
 }
 .post-container {
     max-width: 800px;
@@ -70,13 +70,13 @@ nav ul li a:hover::after{
     margin-top: 4rem !important;
 }
 .back-home {
-    color:#01EEFF;
+    color: white;
     font-size: 0.9rem;
 }
 .header-title{
     width: 90%;
     font-size: 2.6rem;
-    color: #222735;
+    color: #01EEFF;
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -99,46 +99,213 @@ nav ul li a:hover::after{
     text-align: justify;
 
 }
-.comment-box{
-    width: 50%;
-    border:  1px solid #ccc;
-    margin: 50px 0;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-left: 25%;
-    margin-top: 80px;
-    box-shadow: 0px 0px 10px 1px rgb(165,165,165);
+.like-section{
+    margin-left: 200px;
 }
-.comment-box p{
-    text-align: left;
-    font-size: 28px;
-    color: #777;
-}
-.comment-form textarea{
-    width: 100%;
+.like-btn {
+    background-color: #1a1a1a;
+    color: white;
     padding: 10px;
-    margin: 5px 0;
-    box-sizing: border-box;
-    outline: none;
-    font-size: 18px;
-    border: 1px solid #ddd;
-    color: #777;
-}
-.comment-form button{
-    margin: 10px 0;
     border: none;
-    background-color: #d0d0d0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.like-btn:hover {
+    background-color: #555;
+}
+
+.like-count {
+    color: red;
+    margin-bottom: 10px;
+}
+.container1 {
+    background: #fff;
+    padding: 20px;
+    font-family: monospace;
+    width: 500px;
+    box-shadow: 0 0 5px #000;
+    margin:auto;
+}
+
+.head {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.text {
+    margin: 10px 0;
+    font-family: sans-serif;
+    font-size: 0.9em;
+}
+
+.commentbox {
+    display: flex;
+    justify-content: space-around;
     padding: 10px;
-    font-size: 18px;
+}
+
+.commentbox > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* float: left; */
+    margin-right: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content {
+    width: 100%;
+}
+
+.user {
+    border: none;
+    outline: none;
+    margin: 5px 0;
+    color: #808080;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.commentinput > input {
+    border: none;
+    padding: 10px;
+    padding-left: 0;
+    outline: none;
+    border-bottom: 2px solid blue;
+    margin-bottom: 10px;
+    width: 95%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #808080;
+}
+
+.buttons > button {
+    padding: 5px 10px;
+    background: lightgrey;
+    color: #808080;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
     border-radius: 3px;
-    color: #444;
-}
-button:hover{
-    color: #444;
-    background-color: #01EEFF;
+    cursor: pointer;
 }
 
+.buttons > button.abled {
+    background: blue;
+    color: #fff;
+}
 
+.policy {
+    margin: 20px 0;
+    font-size: 0.8em;
+    font-family: Arial, sans-serif;
+    color: #808080;
+}
+
+.policy a {
+    text-decoration: none;
+    color: blue;
+}
+
+.notify {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.notify > input {
+    margin-right: 5px;
+    border: 2px solid #808080;
+}
+
+.parents {
+    font-family: Arial, sans-serif;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.parents h1 {
+    font-size: 0.9em;
+}
+
+.parents p {
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+.parents > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.engagements {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.engagements img {
+    width: 20px;
+
+}
+
+.engagements img:nth-child(1) {
+    margin-right: 10px;
+    width: 25px;
+}
+
+.date {
+    color: #808080;
+    font-size: 0.8em;
+}
+
+nav .fa-solid{
+    display: none;
+}
+@media only screen and (max-width: 600px){
+
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+        color: white;
+    }
+    nav ul{
+        background: black;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li a{
+        color: white;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+        color: white;
+    }
+}
 @media (max-width: 1060px){
 
 }

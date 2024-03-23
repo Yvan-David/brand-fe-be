@@ -7,5 +7,27 @@
 </head>
 <body>
     <H2>WERTYUIO;LKJHGFDSDFGHJKL;</H2>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad quaerat sed blanditiis labore et. Vel quia iste praesentium quasi officiis accusantium autem, laudantium aperiam optio explicabo modi consequuntur debitis sit?
 </body>
 </html>
+<div id="header">
+    <div class="container">
+        <nav>
+            <h2 class="logo">Portfolio.</h2>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+               <!--  <li><a href="dashboard/dashboard.html">Dashboard</a></li> -->
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/login/login.html"><button onclick="logout()" >Logout</button></a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Hello <span><script>document.write(sessionStorage.getItem('username'))</script></span> it's Me<h1>Yvan David</h1>
+            <br>And I'am a <span>junior developer</span></p>
+        </div>
+    </div>

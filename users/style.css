@@ -14,7 +14,7 @@ body{
 #header{
     width: 100%;
     height: 100%;
-    background: #151925;
+    background: #222735;
     background-size: cover;
     background-position: center;
 }
@@ -32,11 +32,6 @@ nav ul li{
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
-}
-nav ul li a button{
-    background-color: #151925;
-    border-color: #151925;
-    color: white;
 }
 nav ul li a{
     color:white;

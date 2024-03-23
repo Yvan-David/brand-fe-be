@@ -16,10 +16,10 @@
                 <li><a href="#header">Home</a></li>
                 <li><a href="#about">About</a></li>
                <!--  <li><a href="dashboard/dashboard.html">Dashboard</a></li> -->
-                <li><a href="#blogs">Projects</a></li>
-                <li><a href="#projects">Blogs</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="login/login.html">Login</a></li>
+                <li><a href="/login/login.html">Login</a></li>
                 <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
             </ul>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
@@ -35,7 +35,7 @@
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="images/me1.jpg">
+                <img src="/images/me1.jpg">
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About <span>Me</span></h1>
@@ -73,25 +73,25 @@
 <!-- ------blogs------ -->
 <div id="blogs">
     <div class="container">
-        <h1 class="sub-title">Projects</h1>
+        <h1 class="sub-title">Blogs</h1>
         <div class="blogs-list">
             <div>
                 <i class="fa-solid fa-code"></i>
                 <h2>Web Design</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis delectus esse nihil facilis error. Non nesciunt illo velit culpa nobis id hic aut adipisci, necessitatibus ratione nulla aspernatur, consequuntur animi?</p>
-                <a href="#">Learn more</a>
+                <a href="blog/blog.html">Learn more</a>
             </div>
             <div>
                 <i class="fa-solid fa-crop-simple"></i>
                 <h2>UI/UX Design</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis delectus esse nihil facilis error. Non nesciunt illo velit culpa nobis id hic aut adipisci, necessitatibus ratione nulla aspernatur, consequuntur animi?</p>
-                <a href="#">Learn more</a>
+                <a href="blog/blog.html">Learn more</a>
             </div>
             <div>
                 <i class="fa-brands fa-app-store"></i>
                 <h2>app Design</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis delectus esse nihil facilis error. Non nesciunt illo velit culpa nobis id hic aut adipisci, necessitatibus ratione nulla aspernatur, consequuntur animi?</p>
-                <a href="#">Learn more</a>
+                <a href="blog/blog.html">Learn more</a>
             </div>
         </div>
     </div>
@@ -99,10 +99,35 @@
 <!-- ---------Projects------- -->
 <div id="projects">
     <div class="container">
-        <h1 class="sub-title">Blogs</h1>
+        <h1 class="sub-title">My Projects</h1>
         <div class="project-list">
+<!--             <div class="project">
+                <img src="images/img1.jpg">
+                <div class="layer">
+                    <h3>Therapy website</h3>
+                    <p>The website users can schedule therapy sessions</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div> -->
+           <!--  <div class="project">
+                <img src="images/img2.jpg">
+                <div class="layer">
+                    <h3>AirBnb</h3>
+                    <p>The website users can book airbnb online</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/img3.jpg">
+                <div class="layer">
+                    <h3>portfolio website</h3>
+                    <p>The website users can see my work and hire me</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div> -->
         </div>
-       <!--  <a href="#" class="btn">See More</a> -->
+        <section class="blog-list"></section>
+        <a href="/blogs/allBlogs.html" class="btn">See More</a>
     </div>
 </div>
 <!-- -------------contact---------- -->
@@ -126,7 +151,7 @@
                     <span id="name_error"></span>
                     <input type="email" id="email" name="email" placeholder="Your Email">
                     <span id="email_error"></span>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <textarea name="Message" id="message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
             </div>
@@ -155,9 +180,8 @@
     function closemenu() {sidemeu.style.right = '-200px';}
 </script>
 <script src="contact/contact.js"></script>
-<!-- <script src="/blogs/js/home.js"></script> -->
 
-
+<script src="script.js"></script>
 
 </body>
 </html>

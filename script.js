@@ -75,17 +75,53 @@ const createBlog = async () => {
         console.error('Error fetching blog data:', error);
     }
 };
-function logout() {
-    // Clear authentication state
-    if(localStorage.getItem('adminIsLoggedIn')){localStorage.removeItem('adminIsLoggedIn');}
-    if(localStorage.getItem('userIsLoggedIn')){localStorage.removeItem('userIsLoggedIn');}
 
-    localStorage.removeItem('token')
-    localStorage.setItem('currentUserEmail',[]);
-    localStorage.setItem('currentUsername',[]);
-    localStorage.setItem('userId',[]);
-
-    // Redirect to login page
-    window.location.href = "/login/index.HTML";
-}
 createBlog();
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+
+    
+    const form = document.getElementById('form')
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+    
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let message = document.getElementById('message').value;
+
+        // Create object with form data
+        const data = {
+            name: name,
+            email: email,
+            body: message
+        };
+        try {
+            // Send a POST request to your server
+            const response = await fetch('https://backend-brand-production.up.railway.app/messages', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+            console.log(response)
+
+            if (response.ok) {
+                // Optionally, you can clear the form fields after successful publishing
+                name = '';
+                email = '';
+                message = '';
+                location.reload(); // Reload the page or perform any other action after successful publishing
+            } else {
+                console.error('Failed to publish message:', response.json());
+                alert('Failed to post message. Please try again later.');
+            }
+        } catch (error) {
+            console.error('Error posting message:', error);
+            alert('An error occurred while posting message. Please try again later.');
+        }
+    }) /* else {
+        alert('Please fill in both name, email, and message fields.');
+    } */
+});

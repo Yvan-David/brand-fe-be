@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Make a fetch request to get the blog data from the server
-    fetch('https://backend-brand-production.up.railway.app/blogs')
+    fetch('http://localhost:8080/blogs')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to fetch blog data');
             }
+            createBlog();
             return response.json();
         })
         .then(blogData => {
@@ -45,7 +46,7 @@ function navigateToBlog(blogId) {
 const createBlog = async () => {
     try {
         // Fetch blog data from the API
-        const response = await fetch('https://backend-brand-production.up.railway.app/blogs');
+        const response = await fetch('http://localhost:8080/blogs');
         if (!response.ok) {
             throw new Error('Failed to fetch blog data');
         }
@@ -75,17 +76,5 @@ const createBlog = async () => {
         console.error('Error fetching blog data:', error);
     }
 };
-function logout() {
-    // Clear authentication state
-    if(localStorage.getItem('adminIsLoggedIn')){localStorage.removeItem('adminIsLoggedIn');}
-    if(localStorage.getItem('userIsLoggedIn')){localStorage.removeItem('userIsLoggedIn');}
 
-    localStorage.removeItem('token')
-    localStorage.setItem('currentUserEmail',[]);
-    localStorage.setItem('currentUsername',[]);
-    localStorage.setItem('userId',[]);
 
-    // Redirect to login page
-    window.location.href = "/login/index.HTML";
-}
-createBlog();
